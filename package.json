@@ -1,21 +1,14 @@
-{
-  "name": "boomzapas-server",
+ "name": "boomzapas-server",
   "version": "1.0.0",
-  "description": "Boomzapas server",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js"
+    "start": "node server.js"
   },
   "dependencies": {
     "express": "^4.18.2",
-    "dotenv": "^16.0.3",
-    "cors": "^2.8.5"
-  },
-  "devDependencies": {
-    "nodemon": "^3.0.1"
-  },
-  "engines": {
-    "node": ">=18.0.0"
+    "cors": "^2.8.5",
+    "@supabase/supabase-js": "^2.39.0",
+    "mercadopago": "^2.0.6",
+    "dotenv": "^16.3.1"
   }
 }
