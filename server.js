@@ -2,7 +2,8 @@
 // BOOM ZAPAS - Servidor Backend
 // Node.js + Express + Supabase + Mercado Pago
 // ============================================
-
+// Boom Zapas API v2
+require('dotenv').config();
 require('dotenv').config();
 const express = require('express');
 const cors    = require('cors');
