@@ -64,10 +64,19 @@ app.patch('/api/admin/pedido/:id', adminAuth, async (req, res) => {
 app.patch('/api/admin/stock', adminAuth, async (req, res) => {
   try {
     const { producto_id, talle, cantidad } = req.body;
-    const { data, error } = await supabase.from('stock').upsert({ producto_id, talle, cantidad }).select().single();
-    if (error) throw error;
+    console.log('Stock update:', { producto_id, talle, cantidad });
+    const { data, error } = await supabase
+      .from('stock')
+      .upsert({ producto_id, talle, cantidad })
+      .select()
+      .single();
+    if (error) {
+      console.log('Supabase error:', error);
+      throw error;
+    }
     res.json(data);
   } catch(e) {
+    console.log('Error:', e.message);
     res.status(500).json({ error: e.message });
   }
 });
